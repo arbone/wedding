@@ -7,14 +7,29 @@ import BottomBar from '@/components/BottomBar';
 const Layout = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState(0);
   const audioRef = useRef(null);
   const wasPlayingRef = useRef(false);
+
+  // Playlist of songs
+  const playlist = [
+    { src: '/audio/Valle!.mp3', title: 'Valle! - Albanian Wedding Dance' },
+    { src: '/audio/Still Valle!.mp3', title: 'Still Valle! - Albanian Wedding Dance' }
+  ];
 
   // First useEffect to handle initial setup and auto-play attempt
   useEffect(() => {
     // Create audio element
-    audioRef.current = new Audio(config.data.audio.src);
-    audioRef.current.loop = config.data.audio.loop;
+    audioRef.current = new Audio(playlist[currentTrack].src);
+    audioRef.current.loop = false; // Don't loop individual tracks
+
+    // Handle track end - play next track
+    const handleTrackEnd = () => {
+      const nextTrack = (currentTrack + 1) % playlist.length;
+      setCurrentTrack(nextTrack);
+    };
+
+    audioRef.current.addEventListener('ended', handleTrackEnd);
 
     // Try to autoplay
     const attemptAutoplay = async () => {
@@ -47,11 +62,12 @@ const Layout = ({ children }) => {
 
     return () => {
       if (audioRef.current) {
+        audioRef.current.removeEventListener('ended', handleTrackEnd);
         audioRef.current.pause();
         audioRef.current = null;
       }
     };
-  }, []);
+  }, [currentTrack]);
 
   // Second useEffect to handle visibility and focus changes
   useEffect(() => {
@@ -163,15 +179,15 @@ const Layout = ({ children }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={toggleMusic}
-          className="fixed top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-rose-100/50"
+          className="fixed top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-blue-100/50"
         >
           {isPlaying ? (
             <div className="relative">
-              <PauseCircle className="w-6 h-6 text-rose-500" />
+              <PauseCircle className="w-6 h-6 text-blue-500" />
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             </div>
           ) : (
-            <PlayCircle className="w-6 h-6 text-rose-500" />
+            <PlayCircle className="w-6 h-6 text-blue-500" />
           )}
         </motion.button>
 
@@ -192,7 +208,7 @@ const Layout = ({ children }) => {
               <div className="bg-black/80 text-white transform -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2">
                 <Music className="w-4 h-4 animate-pulse" />
                 <span className="text-sm whitespace-nowrap">
-                  {config.data.audio.title}
+                  {playlist[currentTrack].title}
                 </span>
               </div>
             </motion.div>

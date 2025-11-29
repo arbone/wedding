@@ -16,15 +16,6 @@ export default function Location() {
                     viewport={{ once: true }}
                     className="text-center space-y-4 mb-16"
                 >
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="inline-block text-rose-500 font-medium"
-                    >
-                        Lokasi Acara
-                    </motion.span>
 
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -33,7 +24,7 @@ export default function Location() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-serif text-gray-800"
                     >
-                        Lokasi
+                        Location
                     </motion.h2>
 
                     {/* Decorative Divider */}
@@ -44,9 +35,9 @@ export default function Location() {
                         viewport={{ once: true }}
                         className="flex items-center justify-center gap-4 pt-4"
                     >
-                        <div className="h-[1px] w-12 bg-rose-200" />
-                        <MapPin className="w-5 h-5 text-rose-400" />
-                        <div className="h-[1px] w-12 bg-rose-200" />
+                        <div className="h-[1px] w-12 bg-blue-200" />
+                        <MapPin className="w-5 h-5 text-blue-400" />
+                        <div className="h-[1px] w-12 bg-blue-200" />
                     </motion.div>
                 </motion.div>
 
@@ -85,17 +76,17 @@ export default function Location() {
 
                             <div className="space-y-4">
                                 <div className="flex items-start space-x-4">
-                                    <MapPin className="w-5 h-5 text-rose-500 mt-1" />
+                                    <MapPin className="w-5 h-5 text-blue-500 mt-1" />
                                     <p className="text-gray-600 flex-1">{config.data.address}</p>
                                 </div>
 
                                 <div className="flex items-center space-x-4">
-                                    <CalendarCheck className="w-5 h-5 text-rose-500" />
+                                    <CalendarCheck className="w-5 h-5 text-blue-500" />
                                     <p className="text-gray-600">{formatEventDate(config.data.date)}</p>
                                 </div>
 
                                 <div className="flex items-center space-x-4">
-                                    <Clock className="w-5 h-5 text-rose-500" />
+                                    <Clock className="w-5 h-5 text-blue-500" />
                                     <p className="text-gray-600">{config.data.time}</p>
                                 </div>
 
