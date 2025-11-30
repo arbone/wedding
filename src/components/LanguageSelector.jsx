@@ -10,7 +10,10 @@ export default function LanguageSelector() {
     const languages = [
         { code: 'en', label: 'English', flag: '🇬🇧' },
         { code: 'it', label: 'Italiano', flag: '🇮🇹' },
-        { code: 'sq', label: 'Shqip', flag: '🇦🇱' }
+        { code: 'sq', label: 'Shqip', flag: '🇦🇱' },
+        { code: 'fa', label: 'فارسی', flag: '🇮🇷' },
+        { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+        { code: 'ur', label: 'اردو', flag: '🇵🇰' }
     ];
 
     const currentLang = languages.find(l => l.code === language);

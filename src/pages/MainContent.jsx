@@ -5,10 +5,10 @@ import FAQ from './FAQ';
 import RSVP from './RSVP';
 
 // Main Invitation Content
-const MainContent = () => {
+const MainContent = ({ guestName }) => {
     return (
         <main className="flex-grow">
-            <Hero />
+            <Hero guestName={guestName} />
             <Gallery />
             <Location />
             <RSVP />

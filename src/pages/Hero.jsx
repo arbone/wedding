@@ -8,11 +8,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { formatEventDate } from '@/lib/formatEventDate';
 import { safeBase64 } from '@/lib/base64';
 
-export default function Hero() {
+export default function Hero({ guestName: propGuestName }) {
     const { t, language } = useLanguage();
-    const [guestName, setGuestName] = useState('');
+    const [guestName, setGuestName] = useState(propGuestName || '');
 
     useEffect(() => {
+        if (propGuestName) {
+            setGuestName(propGuestName);
+            return;
+        }
+
         const urlParams = new URLSearchParams(window.location.search);
         const guestParam = urlParams.get('guest');
 
@@ -25,7 +30,7 @@ export default function Hero() {
                 setGuestName('');
             }
         }
-    }, []);
+    }, [propGuestName]);
 
     const CountdownTimer = ({ targetDate }) => {
         const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -140,19 +145,19 @@ export default function Hero() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="space-y-3"
                         >
-                            <p className="text-blue-500/80 font-sans font-medium tracking-[0.3em] uppercase text-xs">
-                                {t('hero.welcome')}
-                            </p>
                             {guestName && (
                                 <motion.p
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.8 }}
-                                    className="text-2xl sm:text-3xl font-serif text-gray-800 mt-2 italic"
+                                    className="text-2xl sm:text-3xl font-serif text-gray-800 italic mb-2"
                                 >
-                                    Dear {guestName}
+                                    {t('hero.greeting')} {guestName}
                                 </motion.p>
                             )}
+                            <p className="text-blue-500/80 font-sans font-medium tracking-[0.3em] uppercase text-xs">
+                                {t('hero.welcome')}
+                            </p>
                         </motion.div>
 
                         <motion.h1

@@ -7,12 +7,12 @@ export const LanguageProvider = ({ children }) => {
     // Try to get language from localStorage or browser settings, default to 'en'
     const [language, setLanguage] = useState(() => {
         const savedLang = localStorage.getItem('wedding-lang');
-        if (savedLang && ['en', 'it', 'sq'].includes(savedLang)) {
+        if (savedLang && ['en', 'it', 'sq', 'fa', 'ru', 'ur'].includes(savedLang)) {
             return savedLang;
         }
         // Simple browser language detection
         const browserLang = navigator.language.split('-')[0];
-        return ['it', 'sq'].includes(browserLang) ? browserLang : 'en';
+        return ['it', 'sq', 'fa', 'ru', 'ur'].includes(browserLang) ? browserLang : 'en';
     });
 
     useEffect(() => {

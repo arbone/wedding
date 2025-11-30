@@ -42,8 +42,14 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
  * // Renders the App component
  * <App />
  */
+import Onboarding from '@/pages/Onboarding';
+
+// ... existing imports ...
+
 function App() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [userName, setUserName] = useState('');
   return (
     <HelmetProvider>
       <LanguageProvider>
@@ -76,11 +82,17 @@ function App() {
         </Helmet>
 
         <AnimatePresence mode='wait'>
-          {!isInvitationOpen ? (
-            <LandingPage onOpenInvitation={() => setIsInvitationOpen(true)} />
+          {!isInvitationOpen && !showOnboarding ? (
+            <LandingPage onOpenInvitation={() => setShowOnboarding(true)} />
+          ) : showOnboarding ? (
+            <Onboarding onComplete={(name) => {
+              setUserName(name);
+              setShowOnboarding(false);
+              setIsInvitationOpen(true);
+            }} />
           ) : (
             <Layout>
-              <MainContent />
+              <MainContent guestName={userName} />
             </Layout>
           )}
         </AnimatePresence>
