@@ -1,8 +1,11 @@
 import { CalendarPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
 import config from '@/config/config';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AddToCalendar() {
+    const { t } = useLanguage();
+
     const event = {
         title: "Arbi & Laura's Wedding Party",
         description: "Join us for our wedding celebration! There will be food, drinks, and lots of Valle dancing!",
@@ -36,27 +39,15 @@ END:VCALENDAR`;
     };
 
     return (
-        <div className="flex gap-3 justify-center mt-6">
-            <motion.a
-                href={googleCalendarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-blue-600 shadow-sm border border-blue-100 hover:bg-blue-50 transition-colors"
-            >
-                <CalendarPlus className="w-4 h-4" />
-                Google Calendar
-            </motion.a>
-
+        <div className="flex justify-center mt-8">
             <motion.button
                 onClick={handleDownloadIcs}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-600 shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-3 px-8 py-4 bg-white/90 backdrop-blur-md rounded-full text-blue-600 font-medium shadow-lg shadow-blue-900/5 border border-blue-100 hover:bg-blue-50 transition-all group"
             >
-                <CalendarPlus className="w-4 h-4" />
-                iCal / Outlook
+                <CalendarPlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="tracking-wide">{t('hero.addToCalendar')}</span>
             </motion.button>
         </div>
     );

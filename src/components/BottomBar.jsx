@@ -1,43 +1,26 @@
-// src/components/bottom-bar/BottomBar.jsx
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Home,
-  CalendarHeart,
   MapPin,
-  Gift,
   MessageCircleHeart,
   HelpCircle,
   Camera
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from "@/lib/utils";
 
-const menuItems = [
-  { icon: Home, label: 'Home', href: '#home', id: 'home' },
-  { icon: Camera, label: 'Gallery', href: '#gallery', id: 'gallery' },
-  { icon: MapPin, label: 'Location', href: '#location', id: 'location' },
-  { icon: MessageCircleHeart, label: 'RSVP', href: '#rsvp', id: 'rsvp' },
-  { icon: HelpCircle, label: 'FAQ', href: '#faq', id: 'faq' },
-];
+export default function BottomBar() {
+  const { t } = useLanguage();
+  const [active, setActive] = useState('home');
 
-/**
- * BottomBar is a React functional component that renders a fixed bottom navigation bar
- * with automatic section detection based on scroll position.
- *
- * This component uses Framer Motion to animate its entrance and the Intersection Observer API
- * to automatically detect which section is currently in view. It provides smooth transitions
- * for opacity and vertical movement, and highlights the active section based on scroll position.
- * The component also supports manual navigation by clicking on menu items.
- *
- * @component
- * @example
- * // Basic usage:
- * <BottomBar />
- *
- * @returns {JSX.Element} A JSX element containing the animated bottom navigation bar with auto-detection.
- */
-const BottomBar = () => {
-  const [active, setActive] = React.useState('home');
+  const menuItems = [
+    { icon: Home, label: t('nav.home'), href: '#home', id: 'home' },
+    { icon: Camera, label: t('nav.gallery'), href: '#gallery', id: 'gallery' },
+    { icon: MapPin, label: t('nav.location'), href: '#location', id: 'location' },
+    { icon: MessageCircleHeart, label: t('nav.rsvp'), href: '#rsvp', id: 'rsvp' },
+    { icon: HelpCircle, label: t('nav.faq'), href: '#faq', id: 'faq' },
+  ];
 
   // Function to handle smooth scrolling when clicking menu items
   const handleMenuClick = useCallback((e, href, id) => {
@@ -91,7 +74,7 @@ const BottomBar = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [menuItems]);
 
   return (
     <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4">
@@ -105,7 +88,7 @@ const BottomBar = () => {
           <nav className="flex items-center gap-1">
             {menuItems.map((item) => (
               <motion.a
-                key={item.label}
+                key={item.id}
                 href={item.href}
                 className={cn(
                   "flex flex-col items-center justify-center py-2 px-2 rounded-xl transition-all duration-300 ease-in-out",
@@ -154,6 +137,4 @@ const BottomBar = () => {
       </motion.div>
     </div>
   );
-};
-
-export default BottomBar;
+}

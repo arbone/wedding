@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
-import { Heart, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import config from '@/config/config';
-import WeatherBanner from '@/components/WeatherBanner';
 import AddToCalendar from '@/components/AddToCalendar';
+import LanguageSelector from '@/components/LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { formatEventDate } from '@/lib/formatEventDate';
 import { safeBase64 } from '@/lib/base64';
 
 export default function Hero() {
+    const { t, language } = useLanguage();
     const [guestName, setGuestName] = useState('');
 
     useEffect(() => {
@@ -48,19 +50,28 @@ export default function Hero() {
             return () => clearInterval(timer);
         }, [targetDate]);
 
+        const timeLabels = {
+            days: t('hero.days'),
+            hours: t('hero.hours'),
+            minutes: t('hero.minutes'),
+            seconds: t('hero.seconds')
+        };
+
         return (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+            <div className="flex justify-center gap-8 sm:gap-12 mt-12">
                 {Object.keys(timeLeft).map((interval) => (
                     <motion.div
                         key={interval}
-                        initial={{ scale: 0.5, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        className="flex flex-col items-center p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-blue-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex flex-col items-center group"
                     >
-                        <span className="text-xl sm:text-2xl font-bold text-blue-600">
-                            {timeLeft[interval]}
+                        <span className="text-3xl sm:text-4xl font-serif font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                            {String(timeLeft[interval]).padStart(2, '0')}
                         </span>
-                        <span className="text-xs text-gray-500 capitalize">{interval}</span>
+                        <span className="text-[10px] sm:text-xs font-sans tracking-[0.2em] text-gray-400 uppercase mt-2">
+                            {timeLabels[interval] || interval}
+                        </span>
                     </motion.div>
                 ))}
             </div>
@@ -70,7 +81,7 @@ export default function Hero() {
     const FloatingParticles = () => {
         return (
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
+                {[...Array(15)].map((_, i) => (
                     <motion.div
                         key={i}
                         initial={{
@@ -80,24 +91,21 @@ export default function Hero() {
                             y: typeof window !== 'undefined' ? window.innerHeight : 1000
                         }}
                         animate={{
-                            opacity: [0, 0.6, 0.6, 0],
-                            scale: [0, 1, 1, 0],
+                            opacity: [0, 0.4, 0],
+                            scale: [0, 1.5, 0],
                             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
                             y: -100
                         }}
                         transition={{
-                            duration: Math.random() * 3 + 5,
+                            duration: Math.random() * 5 + 10,
                             repeat: Infinity,
-                            delay: i * 0.4,
-                            ease: "easeInOut"
+                            delay: i * 0.8,
+                            ease: "linear"
                         }}
                         className="absolute"
                     >
                         <div
-                            className={`w-2 h-2 rounded-full ${i % 3 === 0 ? 'bg-blue-400' :
-                                i % 3 === 1 ? 'bg-yellow-300' :
-                                    'bg-blue-300'
-                                } blur-[1px]`}
+                            className="w-1 h-1 rounded-full bg-blue-200 blur-[1px]"
                         />
                     </motion.div>
                 ))}
@@ -107,118 +115,79 @@ export default function Hero() {
 
     return (
         <>
-            <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:py-12 text-center relative overflow-hidden">
-                {/* Animated Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100">
-                    <motion.div
-                        className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 via-transparent to-yellow-50/30"
-                        animate={{
-                            opacity: [0.3, 0.6, 0.3],
-                        }}
-                        transition={{
-                            duration: 8,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    />
-                </div>
+            <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:py-12 text-center relative overflow-hidden bg-[#FAFAFA]">
+                {/* Elegant Background */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white" />
 
                 {/* Floating Particles */}
                 <FloatingParticles />
 
+                {/* Language Selector - Top Right */}
+                <div className="absolute top-6 right-6 z-50">
+                    <LanguageSelector />
+                </div>
+
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-6 relative z-10"
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="relative z-10 max-w-4xl mx-auto w-full space-y-10 sm:space-y-16"
                 >
-
-                    <div className="space-y-4">
-                        {/* Weather Banner */}
-                        <div className="flex justify-center mb-10">
-                            <WeatherBanner />
-                        </div>
-
-                        <motion.p
+                    <div className="space-y-6 sm:space-y-8">
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 0.4 }}
-                            className="text-gray-500 font-light italic text-base sm:text-lg"
+                            transition={{ delay: 0.5, duration: 1 }}
+                            className="space-y-3"
                         >
-                            We're excited to have you join us on our special day!
-                        </motion.p>
-                        <motion.h2
-                            initial={{ scale: 0.8, opacity: 0 }}
+                            <p className="text-blue-500/80 font-sans font-medium tracking-[0.3em] uppercase text-xs">
+                                {t('hero.welcome')}
+                            </p>
+                            {guestName && (
+                                <motion.p
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="text-2xl sm:text-3xl font-serif text-gray-800 mt-2 italic"
+                                >
+                                    Dear {guestName}
+                                </motion.p>
+                            )}
+                        </motion.div>
+
+                        <motion.h1
+                            initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.6 }}
-                            className="text-4xl sm:text-6xl font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600"
+                            transition={{ delay: 0.8, duration: 1 }}
+                            className="text-5xl sm:text-7xl md:text-8xl font-serif text-gray-900 tracking-tight leading-none"
                         >
-                            {config.data.groomName} & {config.data.brideName}
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8 }}
-                            className="text-gray-400 font-serif italic text-sm sm:text-base max-w-md mx-auto"
-                        >
-                            "Two souls with but a single thought, two hearts that beat as one"
-                        </motion.p>
+                            {config.data.groomName} <span className="text-blue-400 font-light">&</span> {config.data.brideName}
+                        </motion.h1>
                     </div>
 
                     <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 1.0 }}
+                        transition={{ delay: 1.2, duration: 1 }}
                         className="relative max-w-md mx-auto"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/70 to-white/70 backdrop-blur-xl rounded-2xl shadow-2xl" />
-
-                        <div className="relative px-4 sm:px-8 py-8 sm:py-10 rounded-2xl border border-blue-200/30 shadow-lg">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px">
-                                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
-                            </div>
-
-                            <div className="space-y-6 text-center">
-                                <div className="space-y-3">
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.9 }}
-                                        className="flex items-center justify-center space-x-2"
-                                    >
-                                        <Calendar className="w-4 h-4 text-blue-400" />
-                                        <span className="text-gray-700 font-medium text-sm sm:text-base">
-                                            {formatEventDate(config.data.date, "full")}
-                                        </span>
-                                    </motion.div>
-
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 1 }}
-                                        className="flex items-center justify-center space-x-2"
-                                    >
-                                        <Clock className="w-4 h-4 text-blue-400" />
-                                        <span className="text-gray-700 font-medium text-sm sm:text-base">
-                                            {config.data.time}
-                                        </span>
-                                    </motion.div>
+                        <div className="flex flex-col items-center space-y-6">
+                            <div className="flex items-center justify-center gap-6 text-gray-600">
+                                <div className="flex items-center gap-2">
+                                    <Calendar className="w-4 h-4 text-blue-400" />
+                                    <span className="font-sans tracking-widest text-sm uppercase">
+                                        {t('hero.date')}
+                                    </span>
                                 </div>
-
-                                <div className="flex items-center justify-center gap-3">
-                                    <div className="h-px w-8 sm:w-12 bg-blue-200/50" />
-                                    <div className="w-2 h-2 rounded-full bg-blue-200" />
-                                    <div className="h-px w-8 sm:w-12 bg-blue-200/50" />
+                                <div className="w-px h-4 bg-gray-300" />
+                                <div className="flex items-center gap-2">
+                                    <Clock className="w-4 h-4 text-blue-400" />
+                                    <span className="font-sans tracking-widest text-sm uppercase">
+                                        {config.data.time}
+                                    </span>
                                 </div>
-                            </div>
-
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-px">
-                                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
                             </div>
                         </div>
-
-                        <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-blue-100/20 rounded-full blur-xl" />
-                        <div className="absolute -bottom-2 -left-2 w-16 sm:w-24 h-16 sm:h-24 bg-blue-100/20 rounded-full blur-xl" />
                     </motion.div>
 
                     <CountdownTimer targetDate={config.data.date} />
