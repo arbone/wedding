@@ -7,13 +7,16 @@ import {
   MapPin,
   Gift,
   MessageCircleHeart,
-  HelpCircle
+  HelpCircle,
+  Camera
 } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 const menuItems = [
   { icon: Home, label: 'Home', href: '#home', id: 'home' },
+  { icon: Camera, label: 'Gallery', href: '#gallery', id: 'gallery' },
   { icon: MapPin, label: 'Location', href: '#location', id: 'location' },
+  { icon: MessageCircleHeart, label: 'RSVP', href: '#rsvp', id: 'rsvp' },
   { icon: HelpCircle, label: 'FAQ', href: '#faq', id: 'faq' },
 ];
 

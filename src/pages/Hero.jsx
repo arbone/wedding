@@ -3,6 +3,7 @@ import { Heart, Calendar, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import config from '@/config/config';
 import WeatherBanner from '@/components/WeatherBanner';
+import AddToCalendar from '@/components/AddToCalendar';
 import { formatEventDate } from '@/lib/formatEventDate';
 import { safeBase64 } from '@/lib/base64';
 
@@ -221,6 +222,14 @@ export default function Hero() {
                     </motion.div>
 
                     <CountdownTimer targetDate={config.data.date} />
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.2 }}
+                    >
+                        <AddToCalendar />
+                    </motion.div>
                 </motion.div>
             </section>
         </>
