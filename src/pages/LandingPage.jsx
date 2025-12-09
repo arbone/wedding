@@ -9,7 +9,7 @@ const LandingPage = ({ onOpenInvitation }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="min-h-screen relative overflow-hidden bg-[url('/images/invitation-card-v2.svg')] bg-cover bg-center bg-no-repeat"
+    className="min-h-screen relative overflow-hidden bg-[url('/images/invitation-card-v2.jpg')] bg-cover bg-center bg-no-repeat"
   >
     {/* Main Content */}
     <div className="relative z-10 min-h-screen flex flex-col items-center justify-end px-4 pb-[25vh]">
