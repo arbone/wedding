@@ -32,41 +32,37 @@ export default function FAQ() {
     };
 
     return (
-        <section id="faq" className="min-h-screen relative overflow-hidden py-20">
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white" />
+        <section id="faq" className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
+            {/* Decorative Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-rose-100/30 rounded-full blur-3xl" />
+            </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Section Header */}
+                {/* Section Header - Consistent Style */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center space-y-4 mb-16"
+                    className="text-center space-y-4 mb-12"
                 >
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-serif text-gray-800"
+                        className="text-4xl md:text-5xl lg:text-6xl font-serif text-gray-900 tracking-tight"
                     >
                         {t('faq.title')}
                     </motion.h2>
 
-                    {/* Decorative Divider */}
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                        viewport={{ once: true }}
-                        className="flex items-center justify-center gap-4 pt-4"
-                    >
-                        <div className="h-[1px] w-12 bg-blue-200" />
-                        <HelpCircle className="w-5 h-5 text-blue-400" />
-                        <div className="h-[1px] w-12 bg-blue-200" />
-                    </motion.div>
+                    <div className="flex items-center justify-center gap-6 pt-2 opacity-60">
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+                        <HelpCircle className="w-5 h-5 text-gray-400 stroke-[1.5]" />
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+                    </div>
                 </motion.div>
 
                 {/* FAQ List */}
@@ -76,40 +72,43 @@ export default function FAQ() {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: Math.min(index * 0.05, 0.3) }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-2xl border border-blue-100/50 shadow-md overflow-hidden"
+                            className="group"
                         >
-                            <button
-                                onClick={() => toggleFAQ(index)}
-                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-blue-50/50 transition-colors"
-                            >
-                                <span className="text-lg font-medium text-gray-800 pr-4">
-                                    {faq.question}
-                                </span>
-                                <motion.div
-                                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                                    transition={{ duration: 0.3 }}
+                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-blue-900/5 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                                <button
+                                    onClick={() => toggleFAQ(index)}
+                                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-blue-50/50 transition-colors"
                                 >
-                                    <ChevronDown className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                                </motion.div>
-                            </button>
-
-                            <AnimatePresence>
-                                {openIndex === index && (
+                                    <span className="text-lg font-medium text-gray-800 pr-4">
+                                        {faq.question}
+                                    </span>
                                     <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
+                                        animate={{ rotate: openIndex === index ? 180 : 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="overflow-hidden"
+                                        className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"
                                     >
-                                        <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                                            {faq.answer}
-                                        </div>
+                                        <ChevronDown className="w-5 h-5 text-blue-500" />
                                     </motion.div>
-                                )}
-                            </AnimatePresence>
+                                </button>
+
+                                <AnimatePresence>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                                                {faq.answer}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
@@ -118,7 +117,7 @@ export default function FAQ() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.3 }}
                     viewport={{ once: true }}
                     className="text-center mt-12"
                 >

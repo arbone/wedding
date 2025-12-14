@@ -5,7 +5,8 @@ import {
   MapPin,
   MessageCircleHeart,
   HelpCircle,
-  Camera
+  Camera,
+  Clock
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from "@/lib/utils";
@@ -18,6 +19,7 @@ export default function BottomBar() {
     { icon: Home, label: t('nav.home'), href: '#home', id: 'home' },
     { icon: Camera, label: t('nav.gallery'), href: '#gallery', id: 'gallery' },
     { icon: MapPin, label: t('nav.location'), href: '#location', id: 'location' },
+    { icon: Clock, label: t('nav.schedule'), href: '#schedule', id: 'schedule' },
     { icon: MessageCircleHeart, label: t('nav.rsvp'), href: '#rsvp', id: 'rsvp' },
     { icon: HelpCircle, label: t('nav.faq'), href: '#faq', id: 'faq' },
   ];
@@ -84,15 +86,15 @@ export default function BottomBar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
       >
-        <div className="backdrop-blur-md bg-white/90 border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.07)] px-3 py-2">
-          <nav className="flex items-center gap-1">
+        <div className="backdrop-blur-md bg-white/90 border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.07)] px-2 py-1.5">
+          <nav className="flex items-center gap-0.5">
             {menuItems.map((item) => (
               <motion.a
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  "flex flex-col items-center justify-center py-2 px-2 rounded-xl transition-all duration-300 ease-in-out",
-                  "hover:bg-gray-50/80 cursor-pointer min-w-[60px]",
+                  "flex flex-col items-center justify-center py-1.5 px-1.5 sm:px-2 rounded-xl transition-all duration-300 ease-in-out",
+                  "hover:bg-gray-50/80 cursor-pointer min-w-[48px] sm:min-w-[56px]",
                   active === item.id
                     ? "text-primary bg-primary/5"
                     : "text-gray-600"

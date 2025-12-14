@@ -1,133 +1,94 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MessageCircle, CheckCircle } from 'lucide-react';
-import config from '@/config/config';
+import { MessageCircle, Calendar, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function RSVP() {
     const { t } = useLanguage();
-    const [formData, setFormData] = useState({
-        name: '',
-        guests: '1',
-        dietary: '',
-        message: ''
-    });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleWhatsApp = () => {
-        const text = `Hi Arbi & Laura! 👋%0A%0AI'd love to confirm my attendance!%0A%0A👤 Name: ${formData.name}%0A👥 Guests: ${formData.guests}%0A🍽️ Dietary: ${formData.dietary || 'None'}%0A💌 Message: ${formData.message}`;
-        window.open(`https://wa.me/?text=${text}`, '_blank');
-    };
-
-    const handleEmail = () => {
-        const subject = `Wedding RSVP - ${formData.name}`;
-        const body = `Name: ${formData.name}%0D%0AGuests: ${formData.guests}%0D%0ADietary Restrictions: ${formData.dietary || 'None'}%0D%0AMessage: ${formData.message}`;
-        window.location.href = `mailto:arbi@example.com?subject=${subject}&body=${body}`;
-    };
+    const whatsappNumber = "393246987461";
+    const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
     return (
-        <section id="rsvp" className="min-h-screen pt-32 pb-32 px-6 bg-[#FAFAFA] relative">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-50" />
+        <section id="rsvp" className="py-24 px-6 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-rose-100/20 rounded-full blur-3xl" />
+            </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="max-w-lg mx-auto relative z-10"
-            >
-                <div className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-2xl shadow-blue-900/5 border border-gray-100 relative overflow-hidden">
-                    {/* Decorative Top Line */}
-                    <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-100 via-blue-300 to-blue-100 opacity-50" />
-
-                    <div className="text-center space-y-4 mb-10">
-                        <h1 className="font-serif text-4xl sm:text-5xl text-gray-900 tracking-tight">{t('rsvp.title')}</h1>
-                        <p className="text-gray-500 font-sans tracking-wide text-sm uppercase">{t('rsvp.subtitle')}</p>
+            <div className="max-w-lg mx-auto relative z-10 space-y-8">
+                {/* Section Header - Outside Card */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center space-y-4"
+                >
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-gray-900 tracking-tight">
+                        {t('rsvp.title')}
+                    </h2>
+                    <div className="flex items-center justify-center gap-6 opacity-60">
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+                        <Heart className="w-5 h-5 text-gray-400 stroke-[1.5]" />
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
                     </div>
+                </motion.div>
 
-                    <div className="space-y-8">
-                        <div className="space-y-6">
-                            <div className="group">
-                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 group-focus-within:text-blue-500 transition-colors">{t('rsvp.nameLabel')}</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder={t('rsvp.namePlaceholder')}
-                                    className="w-full pb-3 bg-transparent border-b-2 border-gray-100 focus:border-blue-500 outline-none transition-all text-lg text-gray-800 placeholder:text-gray-300"
-                                />
-                            </div>
+                {/* Content Card */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="relative group"
+                >
+                    {/* Glow Effect */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-rose-200 via-pink-200 to-blue-200 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
 
-                            <div className="group">
-                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 group-focus-within:text-blue-500 transition-colors">{t('rsvp.guestsLabel')}</label>
-                                <select
-                                    name="guests"
-                                    value={formData.guests}
-                                    onChange={handleChange}
-                                    className="w-full pb-3 bg-transparent border-b-2 border-gray-100 focus:border-blue-500 outline-none transition-all text-lg text-gray-800 cursor-pointer"
-                                >
-                                    {[1, 2, 3, 4, 5].map(num => (
-                                        <option key={num} value={num}>{num} {num === 1 ? t('rsvp.guest') : t('rsvp.guests')}</option>
-                                    ))}
-                                </select>
-                            </div>
+                    <div className="relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 sm:p-10 shadow-2xl shadow-blue-900/5 border border-white/60">
+                        {/* Content */}
+                        <div className="text-center space-y-6">
+                            {/* Note */}
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                {t('rsvp.note')}
+                            </p>
 
-                            <div className="group">
-                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 group-focus-within:text-blue-500 transition-colors">{t('rsvp.dietaryLabel')}</label>
-                                <textarea
-                                    name="dietary"
-                                    value={formData.dietary}
-                                    onChange={handleChange}
-                                    placeholder={t('rsvp.dietaryPlaceholder')}
-                                    rows="1"
-                                    className="w-full pb-3 bg-transparent border-b-2 border-gray-100 focus:border-blue-500 outline-none transition-all text-lg text-gray-800 placeholder:text-gray-300 resize-none"
-                                />
-                            </div>
+                            {/* Deadline Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-rose-50 rounded-full border border-blue-100/50"
+                            >
+                                <Calendar className="w-5 h-5 text-blue-500" />
+                                <span className="font-serif text-xl text-gray-800 font-medium">
+                                    {t('rsvp.deadline')}
+                                </span>
+                            </motion.div>
 
-                            <div className="group">
-                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 group-focus-within:text-blue-500 transition-colors">{t('rsvp.messageLabel')}</label>
-                                <textarea
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    placeholder={t('rsvp.messagePlaceholder')}
-                                    rows="2"
-                                    className="w-full pb-3 bg-transparent border-b-2 border-gray-100 focus:border-blue-500 outline-none transition-all text-lg text-gray-800 placeholder:text-gray-300 resize-none"
-                                />
-                            </div>
+                            {/* Instruction */}
+                            <p className="text-gray-500 text-base">
+                                {t('rsvp.instruction')}
+                            </p>
                         </div>
 
-                        <div className="space-y-4 pt-4">
-                            <motion.button
-                                whileHover={{ scale: 1.01 }}
-                                whileTap={{ scale: 0.99 }}
-                                onClick={handleWhatsApp}
-                                disabled={!formData.name}
-                                className="w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-medium shadow-lg shadow-green-900/10 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                            >
-                                <MessageCircle className="w-5 h-5" />
-                                <span className="tracking-wide">{t('rsvp.whatsappBtn')}</span>
-                            </motion.button>
-
-                            <motion.button
-                                whileHover={{ scale: 1.01 }}
-                                whileTap={{ scale: 0.99 }}
-                                onClick={handleEmail}
-                                disabled={!formData.name}
-                                className="w-full py-4 bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-600 rounded-xl font-medium flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                            >
-                                <Send className="w-4 h-4" />
-                                <span className="tracking-wide">{t('rsvp.emailBtn')}</span>
-                            </motion.button>
-                        </div>
+                        {/* WhatsApp Button */}
+                        <motion.a
+                            href={whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(37, 211, 102, 0.3)" }}
+                            whileTap={{ scale: 0.98 }}
+                            className="w-full mt-8 py-5 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-medium shadow-xl shadow-green-900/20 flex items-center justify-center gap-3 transition-colors"
+                        >
+                            <MessageCircle className="w-6 h-6" />
+                            <span className="text-lg tracking-wide">{t('rsvp.whatsappBtn')}</span>
+                        </motion.a>
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
         </section>
     );
 }

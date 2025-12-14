@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Clock, MapPin, CalendarCheck, ExternalLink, Music, Utensils, PartyPopper, Sparkles } from 'lucide-react';
+import { MapPin, Utensils, Music, PartyPopper, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Timeline() {
@@ -10,70 +10,97 @@ export default function Timeline() {
             time: "19:00",
             title: t('location.arrival'),
             icon: MapPin,
-            color: "bg-blue-500",
-            lightColor: "bg-blue-100"
+            gradient: "from-blue-500 to-cyan-400",
+            bgGradient: "from-blue-50 to-cyan-50",
+            glowColor: "blue"
         },
         {
             time: "20:00",
             title: t('location.dinner'),
             icon: Utensils,
-            color: "bg-indigo-500",
-            lightColor: "bg-indigo-100"
+            gradient: "from-amber-500 to-orange-400",
+            bgGradient: "from-amber-50 to-orange-50",
+            glowColor: "amber"
         },
         {
             time: "21:30",
             title: t('location.party'),
             icon: Music,
-            color: "bg-purple-500",
-            lightColor: "bg-purple-100"
+            gradient: "from-purple-500 to-pink-400",
+            bgGradient: "from-purple-50 to-pink-50",
+            glowColor: "purple"
         },
         {
             time: "00:00",
             title: t('location.cake'),
             icon: PartyPopper,
-            color: "bg-pink-500",
-            lightColor: "bg-pink-100"
+            gradient: "from-rose-500 to-pink-400",
+            bgGradient: "from-rose-50 to-pink-50",
+            glowColor: "rose"
         },
         {
-            time: "ALL NIGHT LONG - 'TILL THE SUN GOES UP!",
+            time: "∞",
             title: t('location.afterParty'),
             icon: Sparkles,
-            color: "bg-indigo-500",
-            lightColor: "bg-indigo-100"
+            gradient: "from-indigo-500 to-violet-400",
+            bgGradient: "from-indigo-50 to-violet-50",
+            glowColor: "indigo",
+            isSpecial: true
         }
     ];
 
     return (
-        <div className="space-y-8 relative">
-            {/* Vertical Line */}
-            <div className="absolute left-[28px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-blue-100 via-purple-100 to-pink-100" />
-
+        <div className="space-y-4">
             {timelineItems.map((item, index) => (
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + (index * 0.1) }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="relative flex items-start gap-6 group"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    className="group cursor-pointer"
                 >
-                    {/* Icon Bubble */}
-                    <div className={`relative z-10 w-14 h-14 flex-shrink-0 rounded-full bg-white border-4 border-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <div className={`w-full h-full rounded-full ${item.lightColor} flex items-center justify-center`}>
-                            <item.icon className={`w-6 h-6 ${item.color.replace('bg-', 'text-')}`} />
-                        </div>
-                    </div>
+                    <div className={`relative flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r ${item.bgGradient} border border-white/50 hover:border-white hover:shadow-lg transition-all duration-300`}>
+                        {/* Time Badge */}
+                        <div className={`relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
+                            {/* Glow effect on hover */}
+                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.gradient} blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300`} />
 
-                    {/* Content Card */}
-                    <div className="flex-grow p-5 rounded-2xl bg-white/50 hover:bg-white/80 backdrop-blur-sm border border-white/50 hover:border-blue-100 shadow-sm hover:shadow-md transition-all duration-300">
-                        <div className={`flex flex-col ${item.time.length > 10 ? '' : 'sm:flex-row sm:items-center'} justify-between gap-1`}>
-                            <span className={`font-bold font-mono ${item.time.length > 10 ? 'text-sm sm:text-base' : 'text-xl'} ${item.color.replace('bg-', 'text-')}`}>
+                            <span className={`relative text-white font-bold ${item.isSpecial ? 'text-2xl' : 'text-lg'} tracking-tight`}>
                                 {item.time}
                             </span>
-                            <span className="text-gray-800 font-medium text-lg">
-                                {item.title}
-                            </span>
                         </div>
+
+                        {/* Content */}
+                        <div className="flex-grow flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <item.icon className={`w-5 h-5 bg-gradient-to-br ${item.gradient} bg-clip-text`} style={{ color: `var(--tw-gradient-from)` }} />
+                                <span className="text-gray-800 font-medium text-lg group-hover:text-gray-900 transition-colors">
+                                    {item.title}
+                                </span>
+                            </div>
+
+                            {/* Arrow indicator */}
+                            <motion.div
+                                className="opacity-0 group-hover:opacity-100 transition-opacity"
+                                animate={{ x: [0, 5, 0] }}
+                                transition={{ repeat: Infinity, duration: 1.5 }}
+                            >
+                                <span className="text-gray-400">→</span>
+                            </motion.div>
+                        </div>
+
+                        {/* Special badge for last item */}
+                        {item.isSpecial && (
+                            <motion.div
+                                animate={{ rotate: [0, 10, -10, 0] }}
+                                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                className="absolute -top-2 -right-2"
+                            >
+                                <span className="text-xl">🎉</span>
+                            </motion.div>
+                        )}
                     </div>
                 </motion.div>
             ))}

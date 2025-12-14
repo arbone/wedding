@@ -16,6 +16,7 @@ export const translations = {
             home: "Home",
             gallery: "Gallery",
             location: "Location",
+            schedule: "Schedule",
             rsvp: "RSVP",
             faq: "FAQ"
         },
@@ -26,11 +27,12 @@ export const translations = {
             caption3: "Adventures Together",
             caption4: "Engagement Party",
             caption5: "Pre-wedding Shoot",
-            caption6: "Counting Down"
+            caption6: "Counting Down",
+            swipeHint: "Swipe or tap to browse"
         },
         location: {
             title: "The Venue",
-            ceremony: "Ceremony & Reception",
+            ceremony: "Reception",
             address: "Vathi Kompleks, Rruga e Krujës, Fushë-Krujë",
             getDirections: "Get Directions",
             schedule: "Schedule",
@@ -42,18 +44,10 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            subtitle: "Please let us know if you can make it!",
-            nameLabel: "Full Name",
-            namePlaceholder: "Your Name",
-            guestsLabel: "Number of Guests",
-            guest: "Guest",
-            guests: "Guests",
-            dietaryLabel: "Dietary Restrictions",
-            dietaryPlaceholder: "Any allergies or special diets?",
-            messageLabel: "Message",
-            messagePlaceholder: "Leave a note for the couple...",
-            whatsappBtn: "Confirm via WhatsApp",
-            emailBtn: "Confirm via Email"
+            deadline: "March 1, 2026",
+            note: "We kindly ask you to confirm your attendance by",
+            instruction: "Send us a message on WhatsApp to let us know if you'll be joining us!",
+            whatsappBtn: "Confirm on WhatsApp"
         },
         faq: {
             title: "Frequently Asked Questions",
@@ -111,6 +105,7 @@ export const translations = {
             home: "Home",
             gallery: "Galleria",
             location: "Location",
+            schedule: "Programma",
             rsvp: "RSVP",
             faq: "FAQ"
         },
@@ -121,11 +116,12 @@ export const translations = {
             caption3: "Avventure Insieme",
             caption4: "Festa di Fidanzamento",
             caption5: "Servizio Pre-matrimoniale",
-            caption6: "Conto alla Rovescia"
+            caption6: "Conto alla Rovescia",
+            swipeHint: "Scorri o tocca per sfogliare"
         },
         location: {
             title: "La Location",
-            ceremony: "Cerimonia & Ricevimento",
+            ceremony: "Ricevimento",
             address: "Vathi Kompleks, Rruga e Krujës, Fushë-Krujë",
             getDirections: "Indicazioni",
             schedule: "Programma",
@@ -137,18 +133,10 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            subtitle: "Fateci sapere se ci sarete!",
-            nameLabel: "Nome Completo",
-            namePlaceholder: "Il tuo nome",
-            guestsLabel: "Numero di Ospiti",
-            guest: "Ospite",
-            guests: "Ospiti",
-            dietaryLabel: "Intolleranze Alimentari",
-            dietaryPlaceholder: "Allergie o diete speciali?",
-            messageLabel: "Messaggio",
-            messagePlaceholder: "Lascia un messaggio agli sposi...",
-            whatsappBtn: "Conferma su WhatsApp",
-            emailBtn: "Conferma via Email"
+            deadline: "1 Marzo 2026",
+            note: "Vi chiediamo gentilmente di confermare la vostra presenza entro il",
+            instruction: "Inviateci un messaggio su WhatsApp per farci sapere se ci sarete!",
+            whatsappBtn: "Conferma su WhatsApp"
         },
         faq: {
             title: "Domande Frequenti",
@@ -206,6 +194,7 @@ export const translations = {
             home: "Kreu",
             gallery: "Galeria",
             location: "Vendndodhja",
+            schedule: "Programi",
             rsvp: "Konfirmimi",
             faq: "Pyetje"
         },
@@ -216,11 +205,12 @@ export const translations = {
             caption3: "Aventurat Së Bashku",
             caption4: "Fejesa",
             caption5: "Seti Fotografik",
-            caption6: "Numërimi Mbrapsht"
+            caption6: "Numërimi Mbrapsht",
+            swipeHint: "Rrëshqit ose prek për të parë"
         },
         location: {
             title: "Vendndodhja",
-            ceremony: "Ceremonia & Darka",
+            ceremony: "Pritja",
             address: "Vathi Kompleks, Rruga e Krujës, Fushë-Krujë",
             getDirections: "Harta",
             schedule: "Programi",
@@ -232,18 +222,10 @@ export const translations = {
         },
         rsvp: {
             title: "Konfirmimi",
-            subtitle: "Ju lutem na njoftoni nëse do të vini!",
-            nameLabel: "Emri i Plotë",
-            namePlaceholder: "Emri juaj",
-            guestsLabel: "Numri i Të Ftuarve",
-            guest: "Person",
-            guests: "Persona",
-            dietaryLabel: "Kufizime Ushqimore",
-            dietaryPlaceholder: "Alergji apo dieta speciale?",
-            messageLabel: "Mesazh",
-            messagePlaceholder: "Lini një shënim për çiftin...",
-            whatsappBtn: "Konfirmo në WhatsApp",
-            emailBtn: "Konfirmo me Email"
+            deadline: "1 Mars 2026",
+            note: "Ju lutemi konfirmoni pjesëmarrjen tuaj deri më",
+            instruction: "Na dërgoni një mesazh në WhatsApp për të na njoftuar!",
+            whatsappBtn: "Konfirmo në WhatsApp"
         },
         faq: {
             title: "Pyetje të Shpeshta",
@@ -301,6 +283,7 @@ export const translations = {
             home: "خانه",
             gallery: "گالری",
             location: "مکان",
+            schedule: "برنامه",
             rsvp: "پاسخ دعوت",
             faq: "سوالات متداول"
         },
@@ -311,11 +294,12 @@ export const translations = {
             caption3: "ماجراجویی های با هم",
             caption4: "جشن نامزدی",
             caption5: "عکاسی قبل از عروسی",
-            caption6: "شمارش معکوس"
+            caption6: "شمارش معکوس",
+            swipeHint: "برای مرور بکشید یا لمس کنید"
         },
         location: {
             title: "محل برگزاری",
-            ceremony: "مراسم و پذیرایی",
+            ceremony: "پذیرایی",
             address: "مجتمع واتی، خیابان کرویه، فوش-کرویه",
             getDirections: "دریافت مسیر",
             schedule: "برنامه",
@@ -327,18 +311,10 @@ export const translations = {
         },
         rsvp: {
             title: "پاسخ دعوت",
-            subtitle: "لطفاً به ما اطلاع دهید که آیا می توانید بیایید!",
-            nameLabel: "نام کامل",
-            namePlaceholder: "نام شما",
-            guestsLabel: "تعداد مهمانان",
-            guest: "مهمان",
-            guests: "مهمانان",
-            dietaryLabel: "محدودیت های غذایی",
-            dietaryPlaceholder: "آلرژی یا رژیم غذایی خاص؟",
-            messageLabel: "پیام",
-            messagePlaceholder: "یادداشتی برای زوج بگذارید...",
-            whatsappBtn: "تایید از طریق واتساپ",
-            emailBtn: "تایید از طریق ایمیل"
+            deadline: "۱ مارس ۲۰۲۶",
+            note: "لطفاً حضور خود را تا تاریخ زیر تأیید کنید",
+            instruction: "برای اطلاع دادن به ما یک پیام در واتساپ بفرستید!",
+            whatsappBtn: "تایید در واتساپ"
         },
         faq: {
             title: "سوالات متداول",
@@ -396,6 +372,7 @@ export const translations = {
             home: "Главная",
             gallery: "Галерея",
             location: "Место",
+            schedule: "Расписание",
             rsvp: "RSVP",
             faq: "FAQ"
         },
@@ -406,11 +383,12 @@ export const translations = {
             caption3: "Приключения Вместе",
             caption4: "Помолвка",
             caption5: "Предсвадебная Съемка",
-            caption6: "Обратный Отсчет"
+            caption6: "Обратный Отсчет",
+            swipeHint: "Проведите или нажмите для просмотра"
         },
         location: {
             title: "Место Проведения",
-            ceremony: "Церемония и Прием",
+            ceremony: "Приём",
             address: "Vathi Kompleks, Rruga e Krujës, Fushë-Krujë",
             getDirections: "Маршрут",
             schedule: "Расписание",
@@ -422,18 +400,10 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            subtitle: "Пожалуйста, сообщите нам, сможете ли вы прийти!",
-            nameLabel: "Полное Имя",
-            namePlaceholder: "Ваше Имя",
-            guestsLabel: "Количество Гостей",
-            guest: "Гость",
-            guests: "Гостей",
-            dietaryLabel: "Диетические Ограничения",
-            dietaryPlaceholder: "Аллергии или диета?",
-            messageLabel: "Сообщение",
-            messagePlaceholder: "Оставьте записку для пары...",
-            whatsappBtn: "Подтвердить в WhatsApp",
-            emailBtn: "Подтвердить по Email"
+            deadline: "1 марта 2026",
+            note: "Пожалуйста, подтвердите своё присутствие до",
+            instruction: "Отправьте нам сообщение в WhatsApp, чтобы сообщить о своём участии!",
+            whatsappBtn: "Подтвердить в WhatsApp"
         },
         faq: {
             title: "Часто Задаваемые Вопросы",
@@ -491,6 +461,7 @@ export const translations = {
             home: "گھر",
             gallery: "گیلری",
             location: "مقام",
+            schedule: "شیڈول",
             rsvp: "دعوت کا جواب",
             faq: "سوالات"
         },
@@ -501,11 +472,12 @@ export const translations = {
             caption3: "ایک ساتھ مہم جوئی",
             caption4: "منگنی کی تقریب",
             caption5: "شادی سے پہلے کی شوٹنگ",
-            caption6: "الٹی گنتی"
+            caption6: "الٹی گنتی",
+            swipeHint: "دیکھنے کے لئے سوائپ یا ٹیپ کریں"
         },
         location: {
             title: "مقام",
-            ceremony: "تقریب اور استقبالیہ",
+            ceremony: "استقبالیہ",
             address: "واتی کمپلیکس، روگا ای کروجیس، فوش-کرویہ",
             getDirections: "راستہ حاصل کریں",
             schedule: "شیڈول",
@@ -517,18 +489,10 @@ export const translations = {
         },
         rsvp: {
             title: "دعوت کا جواب",
-            subtitle: "براہ کرم ہمیں بتائیں کہ کیا آپ آ سکتے ہیں!",
-            nameLabel: "پورا نام",
-            namePlaceholder: "آپ کا نام",
-            guestsLabel: "مہمانوں کی تعداد",
-            guest: "مہمان",
-            guests: "مہمان",
-            dietaryLabel: "غذائی پابندیاں",
-            dietaryPlaceholder: "کوئی الرجی یا خاص غذا؟",
-            messageLabel: "پیغام",
-            messagePlaceholder: "جوڑے کے لئے ایک نوٹ چھوڑیں...",
-            whatsappBtn: "واٹس ایپ پر تصدیق کریں",
-            emailBtn: "ای میل کے ذریعے تصدیق کریں"
+            deadline: "۱ مارچ ۲۰۲۶",
+            note: "براہ کرم اس تاریخ تک اپنی شرکت کی تصدیق کریں",
+            instruction: "ہمیں واٹس ایپ پر پیغام بھیجیں!",
+            whatsappBtn: "واٹس ایپ پر تصدیق کریں"
         },
         faq: {
             title: "اکثر پوچھے گئے سوالات",
