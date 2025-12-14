@@ -120,9 +120,12 @@ export default function Hero({ guestName: propGuestName }) {
 
     return (
         <>
-            <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:py-12 text-center relative overflow-hidden bg-[#FAFAFA]">
-                {/* Elegant Background */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white" />
+            <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:py-12 text-center relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
+                {/* Decorative Background Elements */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-rose-100/30 rounded-full blur-3xl" />
+                </div>
 
                 {/* Floating Particles */}
                 <FloatingParticles />
