@@ -10,11 +10,10 @@ export default function Gallery() {
         { id: 2, src: "/images/first-date.jpg", alt: "Our First Date", caption: t('gallery.caption2') },
         { id: 3, src: "/images/adventures.jpg", alt: "Adventures Together", caption: t('gallery.caption3') },
         { id: 4, src: "/images/pumpkin-patch.jpg", alt: "Lazy Sundays", caption: t('gallery.caption4') },
-        { id: 5, src: "/images/coffee-time.jpg", alt: "Daily Routine", caption: t('gallery.caption5') },
-        { id: 6, src: "/images/game-day.jpg", alt: "Baseball in LA", caption: t('gallery.caption6') },
-        { id: 7, src: "/images/mirror-selfie.jpg", alt: "Daily Snapshots", caption: t('gallery.caption7') },
-        { id: 8, src: "/images/furry-copilot.jpg", alt: "The Whole Family", caption: t('gallery.caption8') },
-        { id: 9, src: "/images/night-out.jpg", alt: "Night Out", caption: t('gallery.caption9') },
+        { id: 5, src: "/images/game-day.jpg", alt: "Baseball in LA", caption: t('gallery.caption5') },
+        { id: 6, src: "/images/mirror-selfie.jpg", alt: "Daily Snapshots", caption: t('gallery.caption6') },
+        { id: 7, src: "/images/furry-copilot.jpg", alt: "The Whole Family", caption: t('gallery.caption7') },
+        { id: 8, src: "/images/night-out.jpg", alt: "Night Out", caption: t('gallery.caption8') },
     ]);
 
     const [exitDirection, setExitDirection] = useState(1);
