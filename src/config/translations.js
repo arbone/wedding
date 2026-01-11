@@ -22,12 +22,15 @@ export const translations = {
         },
         gallery: {
             title: "Our Story",
-            caption1: "Our First Date",
-            caption2: "The Proposal",
+            caption1: "The Proposal",
+            caption2: "Our First Date",
             caption3: "Adventures Together",
-            caption4: "Engagement Party",
-            caption5: "Pre-wedding Shoot",
-            caption6: "Counting Down",
+            caption4: "Lazy Sundays",
+            caption5: "Daily Routine: Annoying Him",
+            caption6: "Baseball in LA!",
+            caption7: "Daily Snapshots",
+            caption8: "The Whole Family!",
+            caption9: "Night Out with Friends",
             swipeHint: "Swipe or tap to browse"
         },
         location: {
@@ -83,7 +86,7 @@ export const translations = {
             q15: "What currency is used? Are there ATMs?",
             a15: "Albania uses the Albanian Lek (ALL). Many places accept Euros, but you'll get better rates with Lek. ATMs are widely available in Tirana and Fushë-Krujë. Credit cards are accepted at most hotels and restaurants.",
             q16: "Who do I contact in case of emergency or if I get lost?",
-            a16: "Save these numbers: Arbi [+355 XX XXX XXXX] and Laura [+355 XX XXX XXXX]. For general emergencies in Albania, dial 112. The venue staff will also be available to help on the day of the wedding.",
+            a16: "For emergencies, dial 112 (Albania's emergency number). Contact details will be shared closer to the date. The venue staff will also be available to help on the day of the wedding.",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -111,12 +114,15 @@ export const translations = {
         },
         gallery: {
             title: "La Nostra Storia",
-            caption1: "Il Primo Appuntamento",
-            caption2: "La Proposta",
+            caption1: "La Proposta",
+            caption2: "Il Primo Appuntamento",
             caption3: "Avventure Insieme",
-            caption4: "Festa di Fidanzamento",
-            caption5: "Servizio Pre-matrimoniale",
-            caption6: "Conto alla Rovescia",
+            caption4: "Domeniche Pigre",
+            caption5: "Daily Routine: Infastidire",
+            caption6: "Baseball a LA!",
+            caption7: "Daily Snapshots",
+            caption8: "La Famiglia al Completo!",
+            caption9: "Serata con Amici",
             swipeHint: "Scorri o tocca per sfogliare"
         },
         location: {
@@ -172,7 +178,7 @@ export const translations = {
             q15: "Che valuta si usa? Ci sono bancomat?",
             a15: "Si usa il Lek albanese (ALL). Molti posti accettano Euro, ma il cambio è migliore in Lek. I bancomat sono diffusi. Le carte di credito sono accettate in hotel e ristoranti.",
             q16: "Chi contatto in caso di emergenza?",
-            a16: "Salva questi numeri: Arbi [+355 XX XXX XXXX] e Laura [+355 XX XXX XXXX]. Per emergenze generali chiama il 112. Lo staff della location sarà disponibile il giorno del matrimonio.",
+            a16: "Per emergenze, chiama il 112 (numero emergenze Albania). I contatti saranno condivisi più vicino alla data. Lo staff della location sarà disponibile il giorno del matrimonio.",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -200,12 +206,15 @@ export const translations = {
         },
         gallery: {
             title: "Historia Jonë",
-            caption1: "Takimi i Parë",
-            caption2: "Propozimi",
+            caption1: "Propozimi",
+            caption2: "Takimi i Parë",
             caption3: "Aventurat Së Bashku",
-            caption4: "Fejesa",
-            caption5: "Seti Fotografik",
-            caption6: "Numërimi Mbrapsht",
+            caption4: "Të Dielat e Qeta",
+            caption5: "Rutina Ditore: Bezdiset",
+            caption6: "Baseball në LA!",
+            caption7: "Momente Ditore",
+            caption8: "E Gjithë Familja!",
+            caption9: "Natë me Miq",
             swipeHint: "Rrëshqit ose prek për të parë"
         },
         location: {
@@ -289,12 +298,15 @@ export const translations = {
         },
         gallery: {
             title: "داستان ما",
-            caption1: "اولین قرار ما",
-            caption2: "پیشنهاد ازدواج",
+            caption1: "پیشنهاد ازدواج",
+            caption2: "اولین قرار ما",
             caption3: "ماجراجویی های با هم",
-            caption4: "جشن نامزدی",
-            caption5: "عکاسی قبل از عروسی",
-            caption6: "شمارش معکوس",
+            caption4: "یکشنبه های آرام",
+            caption5: "روتین روزانه: اذیت کردن",
+            caption6: "بیسبال در لس آنجلس!",
+            caption7: "لحظات روزمره",
+            caption8: "همه خانواده!",
+            caption9: "شب با دوستان",
             swipeHint: "برای مرور بکشید یا لمس کنید"
         },
         location: {
@@ -378,12 +390,15 @@ export const translations = {
         },
         gallery: {
             title: "Наша История",
-            caption1: "Первое Свидание",
-            caption2: "Предложение",
+            caption1: "Предложение",
+            caption2: "Первое Свидание",
             caption3: "Приключения Вместе",
-            caption4: "Помолвка",
-            caption5: "Предсвадебная Съемка",
-            caption6: "Обратный Отсчет",
+            caption4: "Ленивые Воскресенья",
+            caption5: "Ежедневная Рутина: Достать Его",
+            caption6: "Бейсбол в ЛА!",
+            caption7: "Ежедневные Моменты",
+            caption8: "Вся Семья!",
+            caption9: "Вечер с Друзьями",
             swipeHint: "Проведите или нажмите для просмотра"
         },
         location: {
@@ -467,12 +482,15 @@ export const translations = {
         },
         gallery: {
             title: "ہماری کہانی",
-            caption1: "ہماری پہلی ملاقات",
-            caption2: "شادی کی پیشکش",
+            caption1: "شادی کی پیشکش",
+            caption2: "ہماری پہلی ملاقات",
             caption3: "ایک ساتھ مہم جوئی",
-            caption4: "منگنی کی تقریب",
-            caption5: "شادی سے پہلے کی شوٹنگ",
-            caption6: "الٹی گنتی",
+            caption4: "آرام دہ اتوار",
+            caption5: "روزانہ معمول: تنگ کرنا",
+            caption6: "ایل اے میں بیس بال!",
+            caption7: "روزمرہ کے لمحات",
+            caption8: "پورا خاندان!",
+            caption9: "دوستوں کے ساتھ رات",
             swipeHint: "دیکھنے کے لئے سوائپ یا ٹیپ کریں"
         },
         location: {

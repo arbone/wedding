@@ -6,12 +6,15 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Gallery() {
     const { t } = useLanguage();
     const [cards, setCards] = useState([
-        { id: 1, src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 1", caption: t('gallery.caption1') },
-        { id: 2, src: "https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 2", caption: t('gallery.caption2') },
-        { id: 3, src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 3", caption: t('gallery.caption3') },
-        { id: 4, src: "https://images.unsplash.com/photo-1522673607200-1645062cd958?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 4", caption: t('gallery.caption4') },
-        { id: 5, src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 5", caption: t('gallery.caption5') },
-        { id: 6, src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=800", alt: "Couple Photo 6", caption: t('gallery.caption6') },
+        { id: 1, src: "/images/proposal.jpg", alt: "The Proposal", caption: t('gallery.caption1') },
+        { id: 2, src: "/images/first-date.jpg", alt: "Our First Date", caption: t('gallery.caption2') },
+        { id: 3, src: "/images/adventures.jpg", alt: "Adventures Together", caption: t('gallery.caption3') },
+        { id: 4, src: "/images/pumpkin-patch.jpg", alt: "Lazy Sundays", caption: t('gallery.caption4') },
+        { id: 5, src: "/images/coffee-time.jpg", alt: "Daily Routine", caption: t('gallery.caption5') },
+        { id: 6, src: "/images/game-day.jpg", alt: "Baseball in LA", caption: t('gallery.caption6') },
+        { id: 7, src: "/images/mirror-selfie.jpg", alt: "Daily Snapshots", caption: t('gallery.caption7') },
+        { id: 8, src: "/images/furry-copilot.jpg", alt: "The Whole Family", caption: t('gallery.caption8') },
+        { id: 9, src: "/images/night-out.jpg", alt: "Night Out", caption: t('gallery.caption9') },
     ]);
 
     const [exitDirection, setExitDirection] = useState(1);
