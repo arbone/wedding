@@ -78,7 +78,7 @@ function App() {
           <meta property="twitter:image" content={config.data.ogImage} />
 
           {/* Favicon */}
-          <link rel="icon" type="image/x-icon" href={config.data.favicon} />
+          <link rel="icon" type="image/png" href={config.data.favicon} />
 
           {/* Additional Meta Tags */}
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />

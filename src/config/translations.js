@@ -49,11 +49,12 @@ export const translations = {
             deadline: "March 1, 2026",
             note: "We kindly ask you to confirm your attendance by",
             instruction: "Send us a message on WhatsApp to let us know if you'll be joining us!",
-            whatsappBtn: "Confirm on WhatsApp"
+            whatsappBtn: "Confirm on WhatsApp",
+            whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
         },
         faq: {
             title: "Frequently Asked Questions",
-            contact: "Have more questions? Feel free to reach out to us directly!",
+            contact: "Have more questions? Feel free to reach out to Laura or Arbi directly!",
             q1: "Which airport should I fly to?",
             a1: "The nearest airport is Tirana International Airport (TIA) - Mother Teresa Airport. It's the main airport in Albania and well connected to major European cities.",
             q2: "How do I get from the airport to the venue?",
@@ -85,7 +86,7 @@ export const translations = {
             q15: "What currency is used? Are there ATMs?",
             a15: "Albania uses the Albanian Lek (ALL). Many places accept Euros, but you'll get better rates with Lek. ATMs are widely available in Tirana and Fushë-Krujë. Credit cards are accepted at most hotels and restaurants.",
             q16: "Who do I contact in case of emergency or if I get lost?",
-            a16: "For emergencies, dial 112 (Albania's emergency number). Contact details will be shared closer to the date. The venue staff will also be available to help on the day of the wedding.",
+            a16: "For emergencies, dial 112 (Albania's emergency number). For any questions or help, feel free to contact Laura or Arbi directly - we're happy to help!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -140,11 +141,12 @@ export const translations = {
             deadline: "1 Marzo 2026",
             note: "Vi chiediamo gentilmente di confermare la vostra presenza entro il",
             instruction: "Inviateci un messaggio su WhatsApp per farci sapere se ci sarete!",
-            whatsappBtn: "Conferma su WhatsApp"
+            whatsappBtn: "Conferma su WhatsApp",
+            whatsappMessage: "INVITO MATRIMONIO: Buongiorno! Vorrei confermare la presenza al matrimonio da parte di: [inserire nominativi]"
         },
         faq: {
             title: "Domande Frequenti",
-            contact: "Hai altre domande? Contattaci direttamente!",
+            contact: "Hai altre domande? Contatta direttamente Laura o Arbi!",
             q1: "In quale aeroporto devo atterrare?",
             a1: "L'aeroporto più vicino è l'Aeroporto Internazionale di Tirana (TIA) - Madre Teresa. È il principale aeroporto dell'Albania e ben collegato con le principali città europee.",
             q2: "Come arrivo dall'aeroporto alla location?",
@@ -176,7 +178,7 @@ export const translations = {
             q15: "Che valuta si usa? Ci sono bancomat?",
             a15: "Si usa il Lek albanese (ALL). Molti posti accettano Euro, ma il cambio è migliore in Lek. I bancomat sono diffusi. Le carte di credito sono accettate in hotel e ristoranti.",
             q16: "Chi contatto in caso di emergenza?",
-            a16: "Per emergenze, chiama il 112 (numero emergenze Albania). I contatti saranno condivisi più vicino alla data. Lo staff della location sarà disponibile il giorno del matrimonio.",
+            a16: "Per emergenze, chiama il 112 (numero emergenze Albania). Per qualsiasi domanda o aiuto, contatta direttamente Laura o Arbi - siamo a disposizione!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -231,11 +233,12 @@ export const translations = {
             deadline: "1 Mars 2026",
             note: "Ju lutemi konfirmoni pjesëmarrjen tuaj deri më",
             instruction: "Na dërgoni një mesazh në WhatsApp për të na njoftuar!",
-            whatsappBtn: "Konfirmo në WhatsApp"
+            whatsappBtn: "Konfirmo në WhatsApp",
+            whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
         },
         faq: {
             title: "Pyetje të Shpeshta",
-            contact: "Keni më shumë pyetje? Na kontaktoni direkt!",
+            contact: "Keni më shumë pyetje? Kontaktoni Laura ose Arbin direkt!",
             q1: "Në cilin aeroport duhet të fluturoj?",
             a1: "Aeroporti më i afërt është Aeroporti Ndërkombëtar i Tiranës (TIA) - Nënë Tereza.",
             q2: "Si të shkoj nga aeroporti në dasmë?",
@@ -267,7 +270,7 @@ export const translations = {
             q15: "Monedha?",
             a15: "Leku Shqiptar (ALL). Euro pranohet shpesh, por Leku është më mirë.",
             q16: "Numrat e emergjencës?",
-            a16: "Arbi & Laura. Për emergjenca 112.",
+            a16: "Për emergjenca thirr 112. Për çdo pyet je apo ndihmë, kontaktoni Laura ose Arbin direkt - jemi në dispozicion!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -322,11 +325,12 @@ export const translations = {
             deadline: "۱ مارس ۲۰۲۶",
             note: "لطفاً حضور خود را تا تاریخ زیر تأیید کنید",
             instruction: "برای اطلاع دادن به ما یک پیام در واتساپ بفرستید!",
-            whatsappBtn: "تایید در واتساپ"
+            whatsappBtn: "تایید در واتساپ",
+            whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
         },
         faq: {
             title: "سوالات متداول",
-            contact: "سوالات بیشتری دارید؟ مستقیماً با ما تماس بگیرید!",
+            contact: "سوالات بیشتری دارید؟ مستقیماً با لورا یا آربی تماس بگیرید!",
             q1: "به کدام فرودگاه باید پرواز کنم؟",
             a1: "نزدیکترین فرودگاه، فرودگاه بین المللی تیرانا (TIA) - مادر ترزا است.",
             q2: "چگونه از فرودگاه به محل برگزاری بروم؟",
@@ -358,7 +362,7 @@ export const translations = {
             q15: "واحد پول؟",
             a15: "لک آلبانی (ALL). یورو اغلب پذیرفته می شود، اما لک بهتر است.",
             q16: "شماره های اضطراری؟",
-            a16: "آربی و لورا. برای موارد اضطراری ۱۱۲.",
+            a16: "برای موارد اضطراری با ۱۱۲ تماس بگیرید. برای هر سوال یا کمکی، مستقیماً با لورا یا آربی تماس بگیرید - در خدمت شما هستیم!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -413,11 +417,12 @@ export const translations = {
             deadline: "1 марта 2026",
             note: "Пожалуйста, подтвердите своё присутствие до",
             instruction: "Отправьте нам сообщение в WhatsApp, чтобы сообщить о своём участии!",
-            whatsappBtn: "Подтвердить в WhatsApp"
+            whatsappBtn: "Подтвердить в WhatsApp",
+            whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
         },
         faq: {
             title: "Часто Задаваемые Вопросы",
-            contact: "Есть вопросы? Свяжитесь с нами!",
+            contact: "Есть вопросы? Свяжитесь с Лаурой или Арби!",
             q1: "В какой аэропорт лететь?",
             a1: "Ближайший аэропорт - Международный аэропорт Тираны (TIA).",
             q2: "Как добраться из аэропорта?",
@@ -449,7 +454,7 @@ export const translations = {
             q15: "Валюта?",
             a15: "Албанский лек (ALL). Евро часто принимают, но леки выгоднее.",
             q16: "Экстренные контакты?",
-            a16: "Арби и Лаура. Экстренный номер 112.",
+            a16: "Для экстренных случаев звоните 112. По любым вопросам обращайтесь напрямую к Лауре или Арби - мы всегда на связи!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }
@@ -504,11 +509,12 @@ export const translations = {
             deadline: "۱ مارچ ۲۰۲۶",
             note: "براہ کرم اس تاریخ تک اپنی شرکت کی تصدیق کریں",
             instruction: "ہمیں واٹس ایپ پر پیغام بھیجیں!",
-            whatsappBtn: "واٹس ایپ پر تصدیق کریں"
+            whatsappBtn: "واٹس ایپ پر تصدیق کریں",
+            whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
         },
         faq: {
             title: "اکثر پوچھے گئے سوالات",
-            contact: "مزید سوالات ہیں؟ ہم سے براہ راست رابطہ کریں!",
+            contact: "مزید سوالات ہیں؟ لورا یا آربی سے براہ راست رابطہ کریں!",
             q1: "مجھے کس ہوائی اڈے پر پرواز کرنی چاہئے؟",
             a1: "قریب ترین ہوائی اڈہ تیرانا انٹرنیشنل ایئرپورٹ (TIA) ہے۔",
             q2: "میں ہوائی اڈے سے مقام تک کیسے پہنچ سکتا ہوں؟",
@@ -540,7 +546,7 @@ export const translations = {
             q15: "کرنسی؟",
             a15: "البانی لیک (ALL)۔ یورو اکثر قبول کیا جاتا ہے، لیکن لیک بہتر ہے۔",
             q16: "ہنگامی رابطہ؟",
-            a16: "آربی اور لورا۔ ہنگامی صورتحال کے لئے 112۔",
+            a16: "ہنگامی صورتحال کے لیے 112 پر کال کریں۔ کسی بھی سوال یا مدد کے لیے، لورا یا آربی سے براہ راست رابطہ کریں - ہم مدد کے لیے حاضر ہیں!",
             q17: "[MEME BONUS FAQ] H-FARM mates from Albania's 2023 group vacation: What is Rakia?",
             a17: "E' la grappa albanese vecchio. You know the vibe 🥂"
         }

@@ -6,7 +6,8 @@ export default function RSVP() {
     const { t } = useLanguage();
 
     const whatsappNumber = "393246987461";
-    const whatsappLink = `https://wa.me/${whatsappNumber}`;
+    const whatsappMessage = encodeURIComponent(t('rsvp.whatsappMessage'));
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
     return (
         <section id="rsvp" className="py-24 px-6 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">

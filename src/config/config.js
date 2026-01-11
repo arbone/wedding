@@ -26,7 +26,7 @@ const config = {
     // Image that appears when link is shared on social media
     ogImage: "/images/og-image.jpg",
     // Icon that appears in browser tab
-    favicon: "/images/favicon.ico",
+    favicon: "/favicon.png",
     // List of event agenda/schedule (add when ready)
     agenda: []
   }
