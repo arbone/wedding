@@ -69,6 +69,11 @@ export default function RSVP() {
                                 </span>
                             </motion.div>
 
+                            {/* Early Note */}
+                            <p className="text-gray-400 text-sm italic">
+                                {t('rsvp.earlyNote')}
+                            </p>
+
                             {/* Instruction */}
                             <p className="text-gray-500 text-base">
                                 {t('rsvp.instruction')}

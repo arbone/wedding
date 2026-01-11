@@ -46,8 +46,9 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            deadline: "March 1, 2026",
+            deadline: "March 15, 2026",
             note: "We kindly ask you to confirm your attendance by",
+            earlyNote: "The sooner you let us know, the better for our planning!",
             instruction: "Send us a message on WhatsApp to let us know if you'll be joining us!",
             whatsappBtn: "Confirm on WhatsApp",
             whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
@@ -72,7 +73,7 @@ export const translations = {
             q8: "What time should I arrive?",
             a8: "The celebration starts at 7:00 PM (19:00). We recommend arriving 15-20 minutes early to find parking, settle in, and get ready for the Albanian wedding party!",
             q9: "What about gifts?",
-            a9: "Your presence is truly the greatest gift we could ask for. Following Albanian tradition, monetary contributions towards our future together are warmly welcomed. A designated area will be available at the venue.",
+            a9: "Your presence is truly the greatest gift we could ask for. Following tradition, an envelope with a contribution towards our future together is always welcome. It's a common question and we don't want to treat it as taboo! A designated area will be available at the venue.",
             q10: "Will there be food? What about dietary restrictions?",
             a10: "Yes! A full dinner will be served with a variety of traditional Albanian and international dishes. If you have specific dietary restrictions or allergies, please let us know in advance so we can accommodate you.",
             q11: "Can I take photos and videos?",
@@ -138,8 +139,9 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            deadline: "1 Marzo 2026",
+            deadline: "15 Marzo 2026",
             note: "Vi chiediamo gentilmente di confermare la vostra presenza entro il",
+            earlyNote: "Prima ci avvisate, meglio è per questioni organizzative!",
             instruction: "Inviateci un messaggio su WhatsApp per farci sapere se ci sarete!",
             whatsappBtn: "Conferma su WhatsApp",
             whatsappMessage: "INVITO MATRIMONIO: Buongiorno! Vorrei confermare la presenza al matrimonio da parte di: [inserire nominativi]"
@@ -164,7 +166,7 @@ export const translations = {
             q8: "A che ora devo arrivare?",
             a8: "La festa inizia alle 19:00. Consigliamo di arrivare 15-20 minuti prima per parcheggiare e prepararsi alla festa nuziale albanese!",
             q9: "Per il regalo?",
-            a9: "La vostra presenza è davvero il regalo più grande che potremmo desiderare. Seguendo la tradizione albanese, i contributi per il nostro futuro insieme sono sempre benvenuti. Ci sarà un'area dedicata presso la location.",
+            a9: "La vostra presenza è davvero il regalo più grande che potremmo desiderare. Seguendo la modalità classica, una busta con un contributo per il nostro futuro insieme sarà sempre benvenuta. È una domanda comune e non vogliamo trattarla come un tabù! Troverete un'area dedicata presso la location.",
             q10: "Ci sarà da mangiare? E per le intolleranze?",
             a10: "Sì! Sarà servita una cena completa con piatti tradizionali albanesi e internazionali. Se hai restrizioni alimentari o allergie, faccelo sapere in anticipo.",
             q11: "Posso fare foto e video?",
@@ -230,8 +232,9 @@ export const translations = {
         },
         rsvp: {
             title: "Konfirmimi",
-            deadline: "1 Mars 2026",
+            deadline: "15 Mars 2026",
             note: "Ju lutemi konfirmoni pjesëmarrjen tuaj deri më",
+            earlyNote: "Sa më shpejt të na njoftoni, aq më mirë për organizimin!",
             instruction: "Na dërgoni një mesazh në WhatsApp për të na njoftuar!",
             whatsappBtn: "Konfirmo në WhatsApp",
             whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
@@ -256,7 +259,7 @@ export const translations = {
             q8: "Në çfarë ore duhet të vij?",
             a8: "Festa fillon në orën 19:00. Ejani pak më herët për t'u rehatuar.",
             q9: "Dhuratat?",
-            a9: "Prania juaj është dhurata më e madhe që mund të kërkonim. Sipas traditës shqiptare, kontributet për të ardhmen tonë janë të mirëpritura. Do të ketë një zonë të caktuar në lokal.",
+            a9: "Prania juaj është dhurata më e madhe që mund të kërkojmë. Sipas traditës, një zarf me një kontribut për të ardhmen tonë së bashku është gjithmonë i mirëpritur. Është një pyetje e zakonshme dhe nuk duam ta trajtojmë si tabu! Do të ketë një zonë të dedikuar në lokal.",
             q10: "Ushqimi dhe dietat?",
             a10: "Do të ketë ushqim tradicional dhe ndërkombëtar. Na njoftoni për alergjitë.",
             q11: "Foto dhe video?",
@@ -322,8 +325,9 @@ export const translations = {
         },
         rsvp: {
             title: "پاسخ دعوت",
-            deadline: "۱ مارس ۲۰۲۶",
+            deadline: "۱۵ مارس ۲۰۲۶",
             note: "لطفاً حضور خود را تا تاریخ زیر تأیید کنید",
+            earlyNote: "هرچه زودتر به ما اطلاع دهید، برای برنامه‌ریزی بهتر است!",
             instruction: "برای اطلاع دادن به ما یک پیام در واتساپ بفرستید!",
             whatsappBtn: "تایید در واتساپ",
             whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
@@ -348,7 +352,7 @@ export const translations = {
             q8: "چه ساعتی باید برسم؟",
             a8: "جشن ساعت ۱۹:۰۰ شروع می شود. کمی زودتر بیایید تا مستقر شوید.",
             q9: "هدیه؟",
-            a9: "حضور شما بزرگترین هدیه‌ای است که می‌توانیم بخواهیم. طبق سنت آلبانی، کمک‌های مالی برای آینده ما با آغوش باز پذیرفته می‌شود. محلی مشخص در مراسم وجود خواهد داشت.",
+            a9: "حضور شما واقعاً بزرگترین هدیه‌ای است که می‌توانیم بخواهیم. طبق سنت، یک پاکت با کمک مالی برای آینده مشترکمان همیشه خوش‌آمد است. این سوال رایجی است و نمی‌خواهیم آن را تابو بدانیم! محلی مشخص در مراسم وجود خواهد داشت.",
             q10: "غذا و رژیم غذایی؟",
             a10: "غذاهای سنتی و بین المللی سرو می شود. آلرژی ها را به ما اطلاع دهید.",
             q11: "عکس و فیلم؟",
@@ -414,8 +418,9 @@ export const translations = {
         },
         rsvp: {
             title: "RSVP",
-            deadline: "1 марта 2026",
+            deadline: "15 марта 2026",
             note: "Пожалуйста, подтвердите своё присутствие до",
+            earlyNote: "Чем раньше вы сообщите, тем лучше для организации!",
             instruction: "Отправьте нам сообщение в WhatsApp, чтобы сообщить о своём участии!",
             whatsappBtn: "Подтвердить в WhatsApp",
             whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
@@ -440,7 +445,7 @@ export const translations = {
             q8: "Во сколько приезжать?",
             a8: "Праздник начинается в 19:00. Приезжайте немного раньше.",
             q9: "Подарки?",
-            a9: "Ваше присутствие - это самый большой подарок, который мы могли бы попросить. Согласно албанской традиции, денежные взносы для нашего будущего приветствуются. На месте будет специальная зона.",
+            a9: "Ваше присутствие — это действительно самый большой подарок, о котором мы могли бы просить. По традиции, конверт с вкладом в наше совместное будущее всегда приветствуется. Это частый вопрос, и мы не хотим считать его табу! На месте будет специальная зона.",
             q10: "Еда и диеты?",
             a10: "Будет ужин с традиционными и международными блюдами. Сообщите об аллергиях.",
             q11: "Фото и видео?",
@@ -506,8 +511,9 @@ export const translations = {
         },
         rsvp: {
             title: "دعوت کا جواب",
-            deadline: "۱ مارچ ۲۰۲۶",
+            deadline: "۱۵ مارچ ۲۰۲۶",
             note: "براہ کرم اس تاریخ تک اپنی شرکت کی تصدیق کریں",
+            earlyNote: "جتنی جلدی آپ ہمیں بتائیںگے، انتظامات کے لیے اتنا بہتر ہے!",
             instruction: "ہمیں واٹس ایپ پر پیغام بھیجیں!",
             whatsappBtn: "واٹس ایپ پر تصدیق کریں",
             whatsappMessage: "WEDDING INVITATION: Hello! I would like to confirm attendance to the wedding for: [enter names here]"
@@ -532,7 +538,7 @@ export const translations = {
             q8: "مجھے کس وقت پہنچنا چاہئے؟",
             a8: "جشن شام 7:00 بجے شروع ہوتا ہے۔ تھوڑا جلدی آئیں۔",
             q9: "تحفے؟",
-            a9: "آپ کی موجودگی سب سے بڑا تحفہ ہے جو ہم مانگ سکتے ہیں۔ البانی روایت کے مطابق، ہمارے مستقبل کے لیے مالی تعاون خوش آمدید ہے۔ تقریب میں ایک مخصوص جگہ ہوگی۔",
+            a9: "آپ کی موجودگی واقعی سب سے بڑا تحفہ ہے جو ہم مانگ سکتے ہیں۔ روایت کے مطابق، ہمارے مشترکہ مستقبل کے لیے ایک لفافے میں تعاون ہمیشہ خوش آئند ہے۔ یہ ایک عام سوال ہے اور ہم اسے ممنوع نہیں سمجھنا چاہتے! تقریب میں ایک مخصوص جگہ ہوگی۔",
             q10: "کھانا اور پرہیز؟",
             a10: "روایتی اور بین الاقوامی کھانے پیش کیے جائیں گے۔ الرجی کے بارے میں ہمیں بتائیں۔",
             q11: "تصاویر اور ویڈیو؟",
