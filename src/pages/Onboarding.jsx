@@ -34,12 +34,12 @@ export default function Onboarding({ onComplete }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-h-screen relative overflow-hidden bg-[#FAFAFA] flex items-center justify-center px-4"
+            className="min-h-[100dvh] relative overflow-auto bg-[#FAFAFA] flex items-center justify-center px-4 py-8 pb-[env(safe-area-inset-bottom)]"
         >
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-50" />
 
-            <div className="relative z-10 w-full max-w-md">
+            <div className="relative z-10 w-full max-w-md my-auto">
                 <AnimatePresence mode='wait'>
                     {step === 1 ? (
                         <motion.div
