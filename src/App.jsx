@@ -47,9 +47,13 @@ import Onboarding from '@/pages/Onboarding';
 // ... existing imports ...
 
 function App() {
-  const [isInvitationOpen, setIsInvitationOpen] = useState(false);
+  // Check if user has already visited (name saved in localStorage)
+  const savedName = localStorage.getItem('wedding-guest-name');
+  const hasVisited = savedName !== null;
+
+  const [isInvitationOpen, setIsInvitationOpen] = useState(hasVisited);
   const [showOnboarding, setShowOnboarding] = useState(false);
-  const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState(savedName || '');
   return (
     <HelmetProvider>
       <LanguageProvider>
@@ -86,6 +90,7 @@ function App() {
             <LandingPage onOpenInvitation={() => setShowOnboarding(true)} />
           ) : showOnboarding ? (
             <Onboarding onComplete={(name) => {
+              localStorage.setItem('wedding-guest-name', name);
               setUserName(name);
               setShowOnboarding(false);
               setIsInvitationOpen(true);
