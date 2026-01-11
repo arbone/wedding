@@ -7,7 +7,12 @@ export default function FAQ() {
     const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState(null);
 
-    const faqs = [
+    // Check if URL contains /hfarm or ?hfarm to show the bonus FAQ
+    const isHfarmMode = window.location.pathname.includes('hfarm') ||
+        window.location.search.includes('hfarm') ||
+        window.location.hash.includes('hfarm');
+
+    const baseFaqs = [
         { question: t('faq.q1'), answer: t('faq.a1') },
         { question: t('faq.q2'), answer: t('faq.a2') },
         { question: t('faq.q3'), answer: t('faq.a3') },
@@ -24,8 +29,12 @@ export default function FAQ() {
         { question: t('faq.q14'), answer: t('faq.a14') },
         { question: t('faq.q15'), answer: t('faq.a15') },
         { question: t('faq.q16'), answer: t('faq.a16') },
-        { question: t('faq.q17'), answer: t('faq.a17') },
     ];
+
+    // Add bonus H-FARM FAQ only if in hfarm mode
+    const faqs = isHfarmMode
+        ? [...baseFaqs, { question: t('faq.q17'), answer: t('faq.a17') }]
+        : baseFaqs;
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
