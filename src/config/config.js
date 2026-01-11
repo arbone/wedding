@@ -28,15 +28,7 @@ const config = {
     // Icon that appears in browser tab
     favicon: "/images/favicon.ico",
     // List of event agenda/schedule (add when ready)
-    agenda: [],
-
-    // Background music settings (currently disabled in Layout.jsx)
-    audio: {
-      src: "/audio/Valle!.mp3",
-      title: "Valle! - Albanian Wedding Dance",
-      autoplay: true,
-      loop: true
-    }
+    agenda: []
   }
 };
 
